@@ -2,11 +2,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import (TemplateView, ListView, DetailView, 
                                   CreateView, UpdateView, DeleteView)
-from SAPblog.blog.models import Post, Comment
+from blog.models import Post, Comment
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from SAPblog.blog.form import PostForm, CommentForm
+from blog.form import PostForm, CommentForm
 
 
 # Create your views here.
