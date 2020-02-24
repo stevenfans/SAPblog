@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from blog.form import PostForm, CommentForm
+import datetime
 
 
 # Create your views here.
@@ -18,7 +19,7 @@ class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now().order_by('-pubished_date'))
+        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-pubished_date')
 
 class PostDetailView(DetailView):
     model = Post
