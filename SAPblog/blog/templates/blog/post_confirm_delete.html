@@ -1,5 +1,8 @@
 {% extends "blog/base.html" %}
 {%block content%}
-<h1> About this compnay</h1>
-<p> Thanks for checking it out </p> 
+<form method="Post">
+    {% csrf_token %}
+    <p>are you sure you want to delete {{object}}?</p>
+    <input type="submit" class="btn btn-danger" value="Confirm">
+</form> 
 {%endblock%}
