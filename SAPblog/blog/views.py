@@ -19,7 +19,7 @@ class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-pubished_date')
+        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')   
 
 class PostDetailView(DetailView):
     model = Post
@@ -46,7 +46,7 @@ class DraftListview(LoginRequiredMixin,ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__isnull=True).order_by('create_date')
+        return Post.objects.filter(published_date__isnull=True).order_by('-create_date')
 
 #######################################################
 ###################FOR COMMENTS#######################
